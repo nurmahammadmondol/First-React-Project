@@ -1,12 +1,13 @@
 import Book from './Book';
+import PropTypes from 'prop-types';
 
-const BookMark = ({ bookMark }) => {
+const BookMark = ({ bookMark, setReadTimes }) => {
   // console.log(bookMark);
   return (
     <div className="md:w-1/3">
       <div className="p-5 border border-[#b4d5d9] bg-[#e6f1f2] rounded-md">
-        <h3 className="text-lg font-bold text-[#077482] text-center">
-          Spent time on read : 0 min
+        <h3 className="text-md font-bold text-[#077482] text-center">
+          Spent time on read : {setReadTimes} min
         </h3>
       </div>
 
@@ -25,4 +26,8 @@ const BookMark = ({ bookMark }) => {
   );
 };
 
+BookMark.propTypes = {
+  bookMark: PropTypes.object,
+  setReadTimes: PropTypes.object,
+};
 export default BookMark;
